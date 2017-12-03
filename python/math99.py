@@ -1,6 +1,7 @@
 #!/bin/python
 #-*-coding utf8-*-
 
+print "This game is print 9*9..."
 max = 1
 m = 0
 n = 0
