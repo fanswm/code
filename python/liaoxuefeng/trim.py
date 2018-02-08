@@ -2,7 +2,10 @@
 # coding: utf-8
 def trim(s):
 	i1 = 0
-	tmp = s[0]
+	if s == '':
+		tmp = ''
+	else:
+		tmp = s[0]
 	while tmp == ' ':
 		i1 += 1
 		tmp = s[i1:(i1 + 1)]
@@ -14,7 +17,7 @@ def trim(s):
 		tmp = s[i2:(i2 - 1)]
 
 	print(s[i1:i2])
-	print("i1 = %d, i2 = %d" %(i1, i2))
+	#print("i1 = %d, i2 = %d" %(i1, i2))
 	if i2 == -1:
 		return s[i1:]
 	else:
