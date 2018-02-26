@@ -1,6 +1,17 @@
 # Prerequisites
 *.d
 
+#Java
+*.class
+
+# Python:
+*.py[cod]
+*.so
+*.egg
+*.egg-info
+dist
+build
+
 # Object files
 *.o
 *.ko
