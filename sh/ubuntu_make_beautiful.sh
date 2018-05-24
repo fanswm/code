@@ -86,3 +86,9 @@ sudo add-apt-repository ppa:noobslab/macbuntu
 sudo apt-get update
 sudo apt-get install albert
 echo "14 done.\n"
+
+
+echo "15. Now, Install Dash-to-dock..."
+cp -R ~/Downloads/dash-to-dock@micxgx.gmail.com/ ~/.local/share/gnome-shell/extension/
+echo "emmmmm... restart gnome(Alt+F2: r) and reset gnome-tweak"
+echo "15 done.\n"
