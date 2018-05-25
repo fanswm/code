@@ -196,6 +196,7 @@ fi
 
 ## 14
 echo "14. Now, Install albert..."
+<<<<<<< HEAD
 echo "Continue?[Y/N]"
 read -p "" yn
 if [ ${yn} == "Y" ]; then
@@ -222,3 +223,15 @@ else
 fi
 
 ## echo "ALL completed! Bye!"
+=======
+sudo add-apt-repository ppa:noobslab/macbuntu
+sudo apt-get update
+sudo apt-get install albert
+echo "14 done.\n"
+
+
+echo "15. Now, Install Dash-to-dock..."
+cp -R ~/Downloads/dash-to-dock@micxgx.gmail.com/ ~/.local/share/gnome-shell/extension/
+echo "emmmmm... restart gnome(Alt+F2: r) and reset gnome-tweak"
+echo "15 done.\n"
+>>>>>>> e8cb1037be423c529fc8e34c825a722503a2cb7c
