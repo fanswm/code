@@ -1,7 +1,7 @@
 #!/bin/bash
 # coding: utf-8
 
-## 1
+## 1 chrome
 echo "1. Now, Install chrome..."
 echo "Continue?[Y/N]"
 read -p "" yn
@@ -14,7 +14,7 @@ else
 	echo -e "Cancel 1 \n"
 fi
 
-## 2
+## 2 unstall amazon
 echo "2. Now, Uninstall amazon..."
 echo "Continue?[Y/N]"
 read -p "" yn
@@ -26,7 +26,7 @@ else
 	echo -e "Cancel 2 \n"
 fi
 
-## 3
+## 3 Gdebi
 echo "3. Now, Install Gdebi..."
 echo "Continue?[Y/N]"
 read -p "" yn
@@ -38,7 +38,7 @@ else
 	echo -e "Cancel 3 \n"
 fi
 
-## 4
+## 4 Git
 echo "4. Now, Install Git..."
 echo "Continue?[Y/N]"
 read -p "" yn
@@ -50,7 +50,7 @@ else
 	echo -e "Cancel 4 \n"
 fi
 
-## 5
+## 5 vim
 echo "5. Now, Install vim..."
 echo "Continue?[Y/N]"
 read -p "" yn
@@ -62,7 +62,7 @@ else
 	echo -e "Cancel 5 \n"
 fi
 
-## 6
+## 6 tsocks jq
 echo "6. Now, Install Curl and tsocks, jq..."
 echo "Continue?[Y/N]"
 read -p "" yn
@@ -76,7 +76,7 @@ fi
 
 echo "Basic is completed."
 
-## 7
+## 7 SSR
 echo "7. Now, Install SSR..."
 echo "Continue?[Y/N]"
 read -p "" yn
@@ -101,7 +101,7 @@ else
 	echo -e "Cancel 7 \n"
 fi
 
-## 8
+## 8 proxychains
 echo "8. Now, Install proxychains..."
 echo "Continue?[Y/N]"
 read -p "" yn
@@ -118,12 +118,32 @@ else
 	echo -e "Cancel 8 \n"
 fi
 
-## 9
-echo "9. Now, Install Gnome-tweak_tool"
+## 9 Gnome-tweak-tool
+echo "9. Now, Install Gnome-tweak-tool"
 echo "Continue?[Y/N]"
 read -p "" yn
 if [ ${yn} == "Y" ]; then
 	sudo apt-get install gnome-tweak-tool
+	
+	echo -e "\n Install hidetopbar..."
+		cd ~/.local/share/gnome-shell/extensions/
+		git clone https://github.com/mlutfy/hidetopbar.git hidetopbar@mathieu.bidon.ca
+		cd hidetopbar@mathieu.bidon.ca
+		make schemas
+		gnome-shell-extension-tool -e hidetopbar@mathieu.bidon.ca
+		gnome-shell --replace &
+	echo -e "hidetopbar completed.\n"
+	echo -e "Open AppStroe, Install user-themes\n"
+	fanswmOK="N"
+	echo -e "If user-themes is installed, Please type:Y\n"
+	read -p "user-themes is installed? [Y/N]" fanswmOK
+	if [ ${fanswmOK} == "Y" ]; then
+		echo -e "user-themes is installed"
+		fanswmOK="N"
+	else
+		echo -e "Cancel user-themes. done.\n"
+	fi
+
 	echo -e "9 done.\n"
 	yn="N"
 else
@@ -135,7 +155,7 @@ fi
 #sudo apt update
 #sudo apt-get install papirus-icon-theme
 
-## 10
+## 10 ocs-url
 echo "10. Now, Install ocs-url..."
 echo "Continue?[Y/N]"
 read -p "" yn
@@ -148,7 +168,7 @@ else
 	echo -e "Cancel 10 \n"
 fi
 
-## 11
+## 11 flat-remix-gnome-theme
 echo "11. Now, Install flat-remix-gnome-theme..."
 echo "Continue?[Y/N]"
 read -p "" yn
@@ -166,7 +186,7 @@ else
 	echo -e "Cancel 11 \n"
 fi
 
-## 12
+## 12 guake
 echo "12. Now Install guake..."
 echo "Continue?[Y/N]"
 read -p "" yn
@@ -178,7 +198,7 @@ else
 	echo -e "Cancel 12 \n"
 fi
 
-## 13
+## 13 zsh
 echo "13. Now, Install zsh..."
 echo "Continue?[Y/N]"
 read -p "" yn
@@ -194,9 +214,8 @@ else
 	echo -e "Cancel 2 \n"
 fi
 
-## 14
+## 14 albert
 echo "14. Now, Install albert..."
-<<<<<<< HEAD
 echo "Continue?[Y/N]"
 read -p "" yn
 if [ ${yn} == "Y" ]; then
@@ -209,7 +228,7 @@ else
 	echo -e "Cancel 14 \n"
 fi
 
-## 15
+## 15 Dash-to-dock
 echo "15. Now, Install Dash-to-dock..."
 echo "Continue?[Y/N]"
 read -p "" yn
@@ -222,16 +241,5 @@ else
 	echo -e "Cancel 15 \n"
 fi
 
-## echo "ALL completed! Bye!"
-=======
-sudo add-apt-repository ppa:noobslab/macbuntu
-sudo apt-get update
-sudo apt-get install albert
-echo "14 done.\n"
-
-
-echo "15. Now, Install Dash-to-dock..."
-cp -R ~/Downloads/dash-to-dock@micxgx.gmail.com/ ~/.local/share/gnome-shell/extension/
-echo "emmmmm... restart gnome(Alt+F2: r) and reset gnome-tweak"
-echo "15 done.\n"
->>>>>>> e8cb1037be423c529fc8e34c825a722503a2cb7c
+## 
+echo "ALL completed! Bye!"
