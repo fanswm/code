@@ -1,0 +1,15 @@
+2018-05-28 06:50:48 (400 KB/s) - 已保存 “libsodium-1.0.16.tar.gz.1” [1910835/1910835])
+
+tar (child): ./libsodium-1.0.16：无法 open: 没有那个文件或目录
+tar (child): Error is not recoverable: exiting now
+tar: Child returned status 2
+tar: Error is not recoverable: exiting now
+./ubuntu_make_beautiful.sh: 第 87 行: cd: ./libsodium-1.0.16: 没有那个文件或目录
+./ubuntu_make_beautiful.sh: 行 88: ./configure: 没有那个文件或目录
+cp: 无法创建普通文件'/usr/local/bin/ssr.sh': 权限不够
+./ubuntu_make_beautiful.sh: 行 94: ssr: 未找到命令
+./ubuntu_make_beautiful.sh: 行 95: ssr: 未找到命令
+./ubuntu_make_beautiful.sh: 行 97: ssr: 未找到命令
+
+
+
