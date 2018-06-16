@@ -1,10 +1,9 @@
 public class Test {
-    public static void main(String args[]) {
-        for(int i=1; i<=9; i++){
-            for(int j=1; j<=i; j++ ){
-                System.out.print(j + "*" + i + "=" + i*j + " ");
-            }
-            System.out.println();
-        }
-    }
+    public static void main(String[] args) {
+    System.out.println(String.format("%1$,09d", -3123));
+System.out.println(String.format("%1$9d", -31));
+System.out.println(String.format("%1$-9d", -31));
+System.out.println(String.format("%1$(9d", -31));
+System.out.println(String.format("%1$#9x", 5689));
+}
 }
