@@ -8,10 +8,10 @@ read -p "" yn
 if [ ${yn} == "Y" ]; then
 	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 	sudo dpkg -i *.deb
-	echo -e "1 done.\n"
+	echo "1 done.\n"
 	yn="N"
 else
-	echo -e "Cancel 1 \n"
+	echo "Cancel 1 \n"
 fi
 
 ## 2
@@ -20,10 +20,10 @@ echo "Continue?[Y/N]"
 read -p "" yn
 if [ ${yn} == "Y" ]; then
 	sudo apt-get remove unity-webapps-common
-	echo -e "2 done.\n"
+	echo "2 done.\n"
 	yn="N"
 else
-	echo -e "Cancel 2 \n"
+	echo "Cancel 2 \n"
 fi
 
 ## 3
@@ -32,10 +32,10 @@ echo "Continue?[Y/N]"
 read -p "" yn
 if [ ${yn} == "Y" ]; then
 	sudo apt-get install gdebi
-	echo -e "3 done.\n"
+	echo "3 done.\n"
 	yn="N"
 else
-	echo -e "Cancel 3 \n"
+	echo "Cancel 3 \n"
 fi
 
 ## 4
@@ -44,10 +44,10 @@ echo "Continue?[Y/N]"
 read -p "" yn
 if [ ${yn} == "Y" ]; then
 	sudo atp-get install git
-	echo -e "4 done.\n"
+	echo "4 done.\n"
 	yn="N"
 else
-	echo -e "Cancel 4 \n"
+	echo "Cancel 4 \n"
 fi
 
 ## 5
@@ -56,10 +56,10 @@ echo "Continue?[Y/N]"
 read -p "" yn
 if [ ${yn} == "Y" ]; then
 	sudo apt-get install vim
-	echo -e "5 done.\n"
+	echo "5 done.\n"
 	yn="N"
 else
-	echo -e "Cancel 5 \n"
+	echo "Cancel 5 \n"
 fi
 
 ## 6
@@ -68,10 +68,10 @@ echo "Continue?[Y/N]"
 read -p "" yn
 if [ ${yn} == "Y" ]; then
 	sudo apt-get install curl tsocks jq
-	echo -e "6 done.\n"
+	echo "6 done.\n"
 	yn="N"
 else
-	echo -e "Cancel 6 \n"
+	echo "Cancel 6 \n"
 fi
 
 echo "Basic is completed."
@@ -95,10 +95,10 @@ if [ ${yn} == "Y" ]; then
 	ssr update
 	# or: ## ssr config #tian ru your config
 	ssr start
-	echo -e "7 done.\n"
+	echo "7 done.\n"
 	yn="N"
 else
-	echo -e "Cancel 7 \n"
+	echo "Cancel 7 \n"
 fi
 
 ## 8
@@ -115,7 +115,7 @@ if [ ${yn} == "Y" ]; then
 	echo "8 done."
 	yn="N"
 else
-	echo -e "Cancel 8 \n"
+	echo "Cancel 8 \n"
 fi
 
 ## 9
@@ -124,10 +124,10 @@ echo "Continue?[Y/N]"
 read -p "" yn
 if [ ${yn} == "Y" ]; then
 	sudo apt-get install gnome-tweak-tool
-	echo -e "9 done.\n"
+	echo "9 done.\n"
 	yn="N"
 else
-	echo -e "Cancel 9 \n"
+	echo "Cancel 9 \n"
 fi
 
 #echo "icons use papirus..."
@@ -145,7 +145,7 @@ if [ ${yn} == "Y" ]; then
 	echo "10 done"
 	yn="N"
 else
-	echo -e "Cancel 10 \n"
+	echo "Cancel 10 \n"
 fi
 
 ## 11
@@ -163,7 +163,7 @@ if [ ${yn} == "Y" ]; then
 	echo "11 done."
 	yn="N"
 else
-	echo -e "Cancel 11 \n"
+	echo "Cancel 11 \n"
 fi
 
 ## 12
@@ -172,10 +172,10 @@ echo "Continue?[Y/N]"
 read -p "" yn
 if [ ${yn} == "Y" ]; then
 	sudo apt-get install guake
-	echo -e "12 done.\n"
+	echo "12 done.\n"
 	yn="N"
 else
-	echo -e "Cancel 12 \n"
+	echo "Cancel 12 \n"
 fi
 
 ## 13
@@ -191,7 +191,7 @@ if [ ${yn} == "Y" ]; then
 	yn="N"
 	echo "13 done."
 else
-	echo -e "Cancel 2 \n"
+	echo "Cancel 2 \n"
 fi
 
 ## 14
@@ -202,10 +202,10 @@ if [ ${yn} == "Y" ]; then
 	sudo add-apt-repository ppa:noobslab/macbuntu
 	sudo apt-get update
 	sudo apt-get install albert
-	echo -e "14 done.\n"
+	echo "14 done.\n"
 	yn="N"
 else
-	echo -e "Cancel 14 \n"
+	echo "Cancel 14 \n"
 fi
 
 ## 15
@@ -215,10 +215,10 @@ read -p "" yn
 if [ ${yn} == "Y" ]; then
 	cp -R ~/Downloads/dash-to-dock@micxgx.gmail.com/ ~/.local/share/gnome-shell/extension/
 	echo "emmmmm... restart gnome(Alt+F2: r) and reset gnome-tweak"
-	echo -e "15 done.\n"
+	echo "15 done.\n"
 	yn="N"
 else
-	echo -e "Cancel 15 \n"
+	echo "Cancel 15 \n"
 fi
 
 ## echo "ALL completed! Bye!"
