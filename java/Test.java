@@ -7,4 +7,3 @@ public class Test {
         System.out.print("After:" );
         System.out.println( Str.trim() );
     }
-}
