@@ -1,11 +1,7 @@
 #!/bin/bash
 # coding: utf-8
 
-<<<<<<< HEAD
-## 1
-=======
 ## 1 chrome
->>>>>>> 467a1da9e8e583e2dac3869a6da2cb650f18a595
 echo "1. Now, Install chrome..."
 echo "Continue?[Y/N]"
 read -p "" yn
@@ -18,11 +14,7 @@ else
 	echo -e "Cancel 1 \n"
 fi
 
-<<<<<<< HEAD
-## 2
-=======
 ## 2 unstall amazon
->>>>>>> 467a1da9e8e583e2dac3869a6da2cb650f18a595
 echo "2. Now, Uninstall amazon..."
 echo "Continue?[Y/N]"
 read -p "" yn
@@ -34,11 +26,7 @@ else
 	echo -e "Cancel 2 \n"
 fi
 
-<<<<<<< HEAD
-## 3
-=======
 ## 3 Gdebi
->>>>>>> 467a1da9e8e583e2dac3869a6da2cb650f18a595
 echo "3. Now, Install Gdebi..."
 echo "Continue?[Y/N]"
 read -p "" yn
@@ -50,11 +38,7 @@ else
 	echo -e "Cancel 3 \n"
 fi
 
-<<<<<<< HEAD
-## 4
-=======
 ## 4 Git
->>>>>>> 467a1da9e8e583e2dac3869a6da2cb650f18a595
 echo "4. Now, Install Git..."
 echo "Continue?[Y/N]"
 read -p "" yn
@@ -66,11 +50,7 @@ else
 	echo -e "Cancel 4 \n"
 fi
 
-<<<<<<< HEAD
-## 5
-=======
 ## 5 vim
->>>>>>> 467a1da9e8e583e2dac3869a6da2cb650f18a595
 echo "5. Now, Install vim..."
 echo "Continue?[Y/N]"
 read -p "" yn
@@ -82,11 +62,7 @@ else
 	echo -e "Cancel 5 \n"
 fi
 
-<<<<<<< HEAD
-## 6
-=======
 ## 6 tsocks jq
->>>>>>> 467a1da9e8e583e2dac3869a6da2cb650f18a595
 echo "6. Now, Install Curl and tsocks, jq..."
 echo "Continue?[Y/N]"
 read -p "" yn
@@ -100,11 +76,7 @@ fi
 
 echo "Basic is completed."
 
-<<<<<<< HEAD
-## 7
-=======
 ## 7 SSR
->>>>>>> 467a1da9e8e583e2dac3869a6da2cb650f18a595
 echo "7. Now, Install SSR..."
 echo "Continue?[Y/N]"
 read -p "" yn
@@ -129,11 +101,7 @@ else
 	echo -e "Cancel 7 \n"
 fi
 
-<<<<<<< HEAD
-## 8
-=======
 ## 8 proxychains
->>>>>>> 467a1da9e8e583e2dac3869a6da2cb650f18a595
 echo "8. Now, Install proxychains..."
 echo "Continue?[Y/N]"
 read -p "" yn
@@ -150,20 +118,12 @@ else
 	echo -e "Cancel 8 \n"
 fi
 
-<<<<<<< HEAD
-## 9
-echo "9. Now, Install Gnome-tweak_tool"
-=======
 ## 9 Gnome-tweak-tool
 echo "9. Now, Install Gnome-tweak-tool"
->>>>>>> 467a1da9e8e583e2dac3869a6da2cb650f18a595
 echo "Continue?[Y/N]"
 read -p "" yn
 if [ ${yn} == "Y" ]; then
 	sudo apt-get install gnome-tweak-tool
-<<<<<<< HEAD
-=======
-	
 	echo -e "\n Install hidetopbar..."
 		cd ~/.local/share/gnome-shell/extensions/
 		git clone https://github.com/mlutfy/hidetopbar.git hidetopbar@mathieu.bidon.ca
@@ -183,7 +143,6 @@ if [ ${yn} == "Y" ]; then
 		echo -e "Cancel user-themes. done.\n"
 	fi
 
->>>>>>> 467a1da9e8e583e2dac3869a6da2cb650f18a595
 	echo -e "9 done.\n"
 	yn="N"
 else
@@ -195,11 +154,7 @@ fi
 #sudo apt update
 #sudo apt-get install papirus-icon-theme
 
-<<<<<<< HEAD
-## 10
-=======
 ## 10 ocs-url
->>>>>>> 467a1da9e8e583e2dac3869a6da2cb650f18a595
 echo "10. Now, Install ocs-url..."
 echo "Continue?[Y/N]"
 read -p "" yn
@@ -212,11 +167,7 @@ else
 	echo -e "Cancel 10 \n"
 fi
 
-<<<<<<< HEAD
-## 11
-=======
 ## 11 flat-remix-gnome-theme
->>>>>>> 467a1da9e8e583e2dac3869a6da2cb650f18a595
 echo "11. Now, Install flat-remix-gnome-theme..."
 echo "Continue?[Y/N]"
 read -p "" yn
@@ -234,11 +185,7 @@ else
 	echo -e "Cancel 11 \n"
 fi
 
-<<<<<<< HEAD
-## 12
-=======
 ## 12 guake
->>>>>>> 467a1da9e8e583e2dac3869a6da2cb650f18a595
 echo "12. Now Install guake..."
 echo "Continue?[Y/N]"
 read -p "" yn
@@ -250,11 +197,7 @@ else
 	echo -e "Cancel 12 \n"
 fi
 
-<<<<<<< HEAD
-## 13
-=======
 ## 13 zsh
->>>>>>> 467a1da9e8e583e2dac3869a6da2cb650f18a595
 echo "13. Now, Install zsh..."
 echo "Continue?[Y/N]"
 read -p "" yn
@@ -270,11 +213,7 @@ else
 	echo -e "Cancel 2 \n"
 fi
 
-<<<<<<< HEAD
-## 14
-=======
 ## 14 albert
->>>>>>> 467a1da9e8e583e2dac3869a6da2cb650f18a595
 echo "14. Now, Install albert..."
 echo "Continue?[Y/N]"
 read -p "" yn
@@ -288,11 +227,7 @@ else
 	echo -e "Cancel 14 \n"
 fi
 
-<<<<<<< HEAD
-## 15
-=======
 ## 15 Dash-to-dock
->>>>>>> 467a1da9e8e583e2dac3869a6da2cb650f18a595
 echo "15. Now, Install Dash-to-dock..."
 echo "Continue?[Y/N]"
 read -p "" yn
@@ -305,9 +240,5 @@ else
 	echo -e "Cancel 15 \n"
 fi
 
-<<<<<<< HEAD
-## echo "ALL completed! Bye!"
-=======
 ## 
 echo "ALL completed! Bye!"
->>>>>>> 467a1da9e8e583e2dac3869a6da2cb650f18a595
