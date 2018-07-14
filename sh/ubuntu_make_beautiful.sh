@@ -124,7 +124,6 @@ echo "Continue?[Y/N]"
 read -p "" yn
 if [ ${yn} == "Y" ]; then
 	sudo apt-get install gnome-tweak-tool
-	
 	echo -e "\n Install hidetopbar..."
 		cd ~/.local/share/gnome-shell/extensions/
 		git clone https://github.com/mlutfy/hidetopbar.git hidetopbar@mathieu.bidon.ca
