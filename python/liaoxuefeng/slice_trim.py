@@ -22,10 +22,6 @@ def trim(s):
 		return s[i1:]
 	else:
 		return s[i1:i2]
-
-
-	
-	
 	print("len(s)= %d" %(len(s)))
 	
 if trim('hello  ') != 'hello':
