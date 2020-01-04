@@ -2,28 +2,34 @@
 # coding: utf-8
 
 import re
+from enum import Enum
 
 '''
-假如你来到了古灵阁，想用人民币兑换金加隆，汇率为：1 金加隆 = 51.3 金加隆
+假如你来到了古灵阁，想用人民币兑换金加隆，汇率为：1 金加隆 = 51.3 人民币
 小精灵向你打招呼，是否需要服务，如果需要，输入yes
 否则，她会不高兴。
 
 如果需要服务，请选择服务窗口，2 号是兑换窗口。
 如果选择其他，会导航你去其他窗口。
 
-输入兑换数量，最大兑换数量为100；
+输入兑换数量，最大兑换数量为MAX_EX_MONEY；
 最大兑换次数为4
 最大支付错误次数为3
 '''
-__author__ = 'abstracthex@126.com'
+__author__ = 'abstracthex@163.com'
 
+
+class Num(Enum):
+
+	MAX_EX_MONEY  	= 100	# Num.MAX_EX_MONEY.value
+	MAX_EX_TIMES	= 4		# Num.MAX_EX_TIMES.value
+	MAX_PAY_TIMES	= 3		# Num.MAX_PAY_TIMES.value
+	RATE 			= 51.3	# Num.RATE.value
 
 class Bank(object):
 	def __init__(self):
-		self._max_exchange = 100	# 累计允许最大兑换量		
 		self._exchanged_number = 0	# 累计兑换了多少
 		self._exchanged_times = 0	# 累计兑换次数
-		self._rate = 51.3			# 汇率
 
 		self._apply_money = 0		# 本次申请兑换多少钱 开放
 		self._success_money = 0		# 本次申请成功多少钱 开放
@@ -36,20 +42,12 @@ class Bank(object):
 		self._user_name = ''		# 开放
 
 	@property
-	def max_exchange(self):
-		return self._max_exchange
-
-	@property
 	def exchanged_number(self):
 		return self._exchanged_number
 
 	@property
 	def exchanged_times(self):
 		return self._exchanged_times
-
-	@property
-	def rate(self):
-		return self._rate
 
 	@property
 	def success_money(self):
@@ -66,7 +64,7 @@ class Bank(object):
 	@success_money.setter
 	def success_money(self, value):
 		self._success_money = value
-		if self._paying_times > 3:
+		if self._paying_times > Num.MAX_PAY_TIMES.value:
 			self._exchanged_number -= self._success_money
 		else:
 			self._exchanged_number += value
@@ -74,7 +72,7 @@ class Bank(object):
 		if value > 0:
 			self._exchanged_times += 1
 
-		self._pay = value * self._rate
+		self._pay = value * Num.RATE.value
 
 	@property
 	def pay(self):
@@ -145,7 +143,7 @@ class Bank_voice(Bank):
 	@property
 	def voice_allow_apply(self):
 		print("小精灵：您的兑换金额不被允许，您已经兑换了 %d 金加隆，目前还能兑换 %d 金加隆。" \
-			%(self.exchanged_number, self.max_exchange - self.exchanged_number))
+			%(self.exchanged_number, Num.MAX_EX_MONEY.value - self.exchanged_number))
 
 	@property
 	def voice_welcome(self):
@@ -189,11 +187,11 @@ class Bank_voice(Bank):
 
 	@property
 	def voice_call_police(self):
-		if self.exchanged_number >= self.max_exchange:
+		if self.exchanged_number >= Num.MAX_EX_MONEY.value:
 			print("小精灵：你都已经兑换了 %d 金加隆了！还不够吗？经理，有人闹事儿！\n\t警车正在开来..." %self.exchanged_number)
 		else:
-			print("小精灵： 虽然你才兑换了 %d 金加隆，但是你正在兑换 第%d次，超过了兑换次数：3次。\n\t警车下在开来..." \
-				%(self.exchanged_number,self.exchanged_times))
+			print("小精灵： 虽然你才兑换了 %d 金加隆，但是你正在兑换 第%d次，超过了兑换次数：%d次。\n\t警车下在开来..." \
+				%(self.exchanged_number,self.exchanged_times, Num.MAX_PAY_TIMES.value))
 	@property
 	def voice_let_pay(self):
 		print("小精灵：您将兑换 %d 金加隆，请支付 %0.2f 人民币！" %(self.success_money, self.pay))
@@ -215,8 +213,8 @@ class Bank_voice(Bank):
 
 	@property
 	def voice_pay_times_overflow(self):
-		print("小精灵：你已经尝试支付了%d次，超过了规定次数：3次！交易失败。\n\t现退款给你 %0.2f 人民币！再见 " \
-			% (self.paying_times, self.payed))
+		print("小精灵：你已经尝试支付了%d次，超过了规定次数：%d次！交易失败。\n\t现退款给你 %0.2f 人民币！再见 " \
+			% (self.paying_times, Num.MAX_PAY_TIMES.value, self.payed))
 
 	@property
 	def voice_please_input_positive(self):
@@ -229,8 +227,7 @@ class Bank_voice(Bank):
 class Bank_exchange(Bank_voice, Input_issue):
 	@property
 	def display(self):
-		print("\t\t\tmax_exchange\t = %d\n\
-			exchanged_number = %d\n\
+		print("\t\t\texchanged_number = %d\n\
 			exchanged_times\t = %d\n\
 			apply_money\t = %d\n\
 			allow_money\t = %d\n\
@@ -239,8 +236,8 @@ class Bank_exchange(Bank_voice, Input_issue):
 			paying\t\t = %0.2f\n\
 			paying_times\t = %0.2f\n\
 			payed\t\t = %0.2f\n\
-			pay_other\t = %0.2f\n\n" %(self.max_exchange, self.exchanged_number,self.exchanged_times,\
-				self.apply_money,self.max_exchange - self.exchanged_number,self.success_money,self.pay,\
+			pay_other\t = %0.2f\n\n" %(self.exchanged_number,self.exchanged_times,\
+				self.apply_money,Num.MAX_EX_MONEY.value - self.exchanged_number,self.success_money,self.pay,\
 				self.paying,self.paying_times, self.payed,self.pay - self.payed ))
 
 	@property
@@ -260,7 +257,7 @@ class Bank_exchange(Bank_voice, Input_issue):
 
 	@property
 	def pay_times_not_overflow(self):
-		if self.paying_times <= 3:
+		if self.paying_times <= Num.MAX_PAY_TIMES.value:
 			return True
 		else:
 			self.voice_call_police
@@ -269,11 +266,11 @@ class Bank_exchange(Bank_voice, Input_issue):
 	@property
 	def allow_apply(self):
 		# 返回是否拒绝兑换：1: 允许
-		x = self.max_exchange - self.exchanged_number - self.apply_money
+		x = Num.MAX_EX_MONEY.value - self.exchanged_number - self.apply_money
 		if x < 0:
 			return False
 		else:
-			if self.exchanged_times > 3:
+			if self.exchanged_times > Num.MAX_EX_TIMES.value:
 				self.voice_call_police
 				return False
 			else:
@@ -320,7 +317,7 @@ def user_paying(user):
 	user.paying = float(i)
 
 	while user.pay_issue == -1:	#如果支付不足
-		while user.paying_times <= 3: # 如果没有超过支付次数
+		while user.paying_times <= Num.MAX_PAY_TIMES.value: # 如果没有超过支付次数
 			user.voice_pay_not_enough
 			i = user.get_input
 		
@@ -331,11 +328,11 @@ def user_paying(user):
 			user.paying = float(i)
 			if user.pay_issue >= 0:
 				break
-		if user.paying_times > 3:
+		if user.paying_times > Num.MAX_PAY_TIMES.value:
 			break
 	#到这里，如果正常支付，不存在支付不足的情况
 
-	if user.paying_times <= 3 :
+	if user.paying_times <= Num.MAX_PAY_TIMES.value :
 		#如果给钱给多了：
 		if user.pay_issue == 1:
 			user.voice_china_tuhao
@@ -413,7 +410,6 @@ def bank_main(user):
 if __name__ == '__main__':
 	user = Bank_exchange()
 	user.user_name = "Tom"
-	#user.display
 	bank_main(user)
-	#user.display
+
 	
